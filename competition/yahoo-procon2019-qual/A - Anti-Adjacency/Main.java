@@ -3,7 +3,10 @@ import java.io.*;
 
 public class Main {
 	private static void solve(){
-       //Implement solution here.
+		int n = ni();
+		int k = ni();
+		String result = n >= 1 + (k - 1)*2 ? "YES" : "NO";
+		System.out.println(result);
 	}
 
     //Switch input source (stdin/file)

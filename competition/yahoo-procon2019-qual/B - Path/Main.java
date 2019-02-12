@@ -3,7 +3,21 @@ import java.io.*;
 
 public class Main {
 	private static void solve(){
-       //Implement solution here.
+		//Implement solution here.
+		int[] ary = new int[4];
+		
+		for(int i = 0; i < 6; i++){
+			ary[ni() - 1]++;
+		}
+		
+		boolean flg = true;
+		for(int i = 0; i < 4; i++){
+			if(ary[i] > 2 || ary[i] < 1){
+				flg = false;
+				break;
+			}
+		}
+		System.out.println(flg ? "YES":"NO");
 	}
 
     //Switch input source (stdin/file)
