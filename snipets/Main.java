@@ -3,7 +3,7 @@ import java.io.*;
 
 public class Main {
 	private static void solve(){
-       //Implement solution here.
+	//Implement solution here.
 	}
 
     //Switch input source (stdin/file)
