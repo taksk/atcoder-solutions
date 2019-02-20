@@ -1,6 +1,7 @@
 import java.util.*;
 import java.io.*;
 
+//https://atcoder.jp/contests/abc118/tasks/abc118_a
 public class Main {
 	private static void solve(){
 	//Implement solution here.
