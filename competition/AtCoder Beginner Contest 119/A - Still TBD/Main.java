@@ -5,22 +5,17 @@ public class Main {
 	private static void solve(){
 	//Implement solution here.
 		String in = next();
-		int[] cmp = {2019,4,30};
-		String[] ymd = in.split("/");
-		boolean hflg = false;
-		for(int i = 0; i < 3; i++){
-			if(cmp[i] > Integer.parseInt(ymd[i])){
-				System.out.println("Heisei");
-				return;
-			}else if(cmp[i] < Integer.parseInt(ymd[i])){
-				break;
-			}
-		}
-		if("2019/04/30".equals(in)){
-			System.out.println("Heisei");
-			return;
-		};
-		System.out.println("TBD");
+
+		Calendar cal1 = Calendar.getInstance();
+		cal1.setTimeInMillis(0L);//Must set milliseconds before set YMD
+		cal1.set(2019,4,30);//This doesn't update hour or smaller digits
+		
+		Calendar cal2 = Calendar.getInstance();
+		cal2.setTimeInMillis(0L);
+		String[] inymd = in.split("/");
+		cal2.set(Integer.parseInt(inymd[0]),Integer.parseInt(inymd[1]),Integer.parseInt(inymd[2]));
+		
+		System.out.println(cal1.compareTo(cal2) >= 0 ? "Heisei" : "TBD");
 	}
 
     //Switch input source (stdin/file)

@@ -3,7 +3,7 @@ import java.util.*;
 public class BinarySearch{
     public static void main(String[] args){
         int[] array = new int[]{1,2,3,5,6,8};
-        int v = 9;
+        int v = 0;
         int leresult = lowerBound(array,0,array.length, v);
         System.out.println("pos:" + leresult);
         int gtresult = upperBound(array,0,array.length, v);
