@@ -1,3 +1,5 @@
 *.class
 /tmp/
 test
+/build/
+/wip/
