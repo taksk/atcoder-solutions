@@ -4,6 +4,33 @@ import java.io.*;
 public class Main {
 	private static void solve(){
 	//Implement solution here.
+		int n = ni();
+		int q = ni();
+		String s = next();
+		int l[] = new int[q];
+		int r[] = new int[q];
+		for(int i = 0; i < q; i++) {
+			l[i] = ni();
+			r[i] = ni();
+		}
+		
+		char[] ca = s.toCharArray();		
+		int casum = 0;
+		int[] enda = new int[n];
+		
+		char tmp = ca[0];	
+		
+		for(int i = 1; i < n; i++) {
+			if(tmp == 'A' && ca[i] == 'C') {
+				casum++;
+			}
+			enda[i] = casum;
+			tmp = ca[i];
+		}
+		
+		for(int i = 0; i < q; i++) {
+			System.out.println(enda[r[i] - 1] - enda[l[i] - 1]);
+		}
 	}
 
     //Switch input source (stdin/file)
