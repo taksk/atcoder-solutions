@@ -33,13 +33,6 @@ public class Main {
 					ptr[a][b] = (ptrVal(a - 1, b - 1) + ptrVal(a - 1, b)) % mod;
 				}
 			}
-//			System.out.println(a + "," + b);
-//			for(int i = 0; i < 5; i++) {
-//				for(int j = 0; j < 5; j++) {
-//					System.out.print(ptr[i][j] + ",");
-//				}
-//				System.out.println();
-//			}	
 			return ptr[a][b];
 		}
 	}
