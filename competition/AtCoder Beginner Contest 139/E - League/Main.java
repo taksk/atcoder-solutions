@@ -17,6 +17,8 @@ public class Main {
 
 		int result = 0;
 		boolean[] checked = new boolean[n];
+		boolean[] matchedBefore = new boolean[n];
+		Arrays.fill(matchedBefore, true);
 		
 		while(true) {
 			//Completion check
@@ -29,6 +31,7 @@ public class Main {
 			//Find match
 			boolean matchable = false;			
 			for(int i = 0; i < n; i++) {
+				if(!matchedBefore[i])continue;
 				if(qa[i].isEmpty() || checked[i])continue;
 				int target = qa[i].peek();
 				if(!checked[target - 1] && qa[target - 1].peek() == i + 1) {
@@ -37,6 +40,10 @@ public class Main {
 					checked[i] = true;
 					checked[target - 1] = true;
 					matchable = true;
+					matchedBefore[i] = true;
+					matchedBefore[target - 1] = true;
+				} else {
+					matchedBefore[i] = false;
 				}
 			}
 			
