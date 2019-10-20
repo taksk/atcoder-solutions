@@ -19,7 +19,7 @@ public class BinarySearch{
     }
     
     //Find position of target value.
-    //If match value doesn't exists retur neerest position contains lesser value
+    //If match value doesn't exists return nearest position contains lesser value
     public static int lowerBound(int[] a, int l, int r, int v){
         if(l > r || l < 0 || r > a.length)throw new IllegalArgumentException();
         int low = l - 1 , high = r;
@@ -35,7 +35,7 @@ public class BinarySearch{
     }
     
     //Find position of target value.
-    //If match value doesn't exists retur neerest position contains greater value
+    //If match value doesn't exists return nearest position contains greater value
     public static int upperBound(int[] a, int l, int r, int v){
         if(l > r || l < 0 || r > a.length)throw new IllegalArgumentException();
         int low = l - 1 , high = r;

@@ -4,15 +4,28 @@ import java.io.*;
 public class Main {
 	private static void solve(){
 	//Implement solution here.
+		char[] ca = next().toCharArray();
+		int ez = 0;
+		int oz = 0;
+		for(int i = 0; i < ca.length; i++){
+			if(i % 2 == 0){
+				ez += ca[i] != '0' ? 1 : 0;
+				oz += ca[i] != '1' ? 1 : 0;
+			}else {
+				ez += ca[i] != '1' ? 1 : 0;
+				oz += ca[i] != '0' ? 1 : 0;
+			}
+		}
+		System.out.println(Math.min(ez, oz));
 	}
 
     //Switch input source (stdin/file)
-	private static Scanner scanner = new Scanner(System.in);
+	private static BufferedReader br  = new BufferedReader(new InputStreamReader(System.in));
 	public static void main(String[] args){
         String debugDataPath = System.getenv("DD_PATH");        
         if(debugDataPath != null){
             try{
-                scanner = new Scanner(new BufferedReader(new InputStreamReader(new FileInputStream(new File(debugDataPath)))));
+            	br = new BufferedReader(new InputStreamReader(new FileInputStream(new File(debugDataPath))));
             }catch(Exception e){
                 throw new RuntimeException(e);
             }
@@ -25,7 +38,7 @@ public class Main {
 	public static String next() {
 		while (tokenizer == null || !tokenizer.hasMoreTokens()) {
 			try {
-				tokenizer = new StringTokenizer(scanner.nextLine());
+				tokenizer = new StringTokenizer(br.readLine());
 			} catch (Exception e) {
 				throw new RuntimeException(e);
 			}
