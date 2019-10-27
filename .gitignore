@@ -4,3 +4,5 @@ test
 /build/
 /wip/
 /.classpath
+/.DS_Store
+/.project
