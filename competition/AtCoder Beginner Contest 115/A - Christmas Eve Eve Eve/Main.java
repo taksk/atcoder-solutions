@@ -2,8 +2,6 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-	static long[] a;
-	static long[] p;
 	private static void solve(){
 		//Implement solution here.
 		int d = ni();
