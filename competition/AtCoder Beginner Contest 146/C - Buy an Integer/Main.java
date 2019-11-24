@@ -7,25 +7,21 @@ public class Main {
 		long a = nl();
 		long b = nl();
 		long x = nl();
-		long maxval = 1000000000L;
-		long tmp = 1L;
-		while(x >= a*tmp + b*digit(tmp)) {
-			tmp *= 10;
+		long min = 0;
+		long max = 1000000001L;
+		while(max - min > 1) {
+			long mid = (min + max) / 2;
+			if(x < a * mid + b * digit(mid)) {
+				max = mid;
+			}else {
+				min = mid;
+			}
 		}
-		if(x < a*tmp + b*digit(tmp))tmp /= 10;
-		long tmpv = a * tmp + b * digit(tmp);
-		long result = tmp + (x - tmpv)/a;
-		System.out.println(result > maxval || result < 0 ? maxval : result);		
+		System.out.println(min);
 	}
 
 	static long digit(long l) {
-		if(l == 0)return 1;
-		long result = 0;
-		while(l > 0) {
-			result++;
-			l /= 10;
-		}
-		return result;
+		return (long)Long.toString(l).length();
 	}
 	
 	//Switch input source (stdin/file)
