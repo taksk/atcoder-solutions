@@ -17,7 +17,7 @@ public class Main {
 		}
 
 		for(int i = 0; i < da.length; i++) {
-			final long l = pow(i);
+			final long l = (long)Math.pow(2, i) % mod;
 			final long i1 = da[i] * (n - da[i]) % mod;
 			result += (l * i1) % mod;
             result %= mod;
@@ -25,14 +25,6 @@ public class Main {
 		System.out.println(result);
 	}
 	
-	private static long pow(final long a) {
-        long result = 1;
-        for (long i = 0; i < a; i++) {
-        	result *= 2;
-        	result %= mod;
-        } 
-        return result;
-    }
 	static int mod = 1000000007;
 
 
