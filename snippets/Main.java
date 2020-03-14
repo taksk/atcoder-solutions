@@ -1,8 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Main {
-
+public class Main {	
 	private static void solve(){
 		//Implement solution here.
 	}
@@ -19,7 +18,21 @@ public class Main {
 				throw new RuntimeException(e);
 			}
 		}
-		solve();
+		boolean hasNext = true;
+		while(hasNext){
+			solve();	
+			try{
+				br.mark(1);
+				if(br.read() > 0){
+					br.reset();			
+					System.out.println("---");
+				} else {
+					hasNext = false;
+				}
+			}catch(Exception e){
+				throw new RuntimeException(e);
+			} 
+		}
 	}
 
 	//Input read utility
